@@ -14,18 +14,26 @@ mongoose.connect(dbUrl, {
 });
 mongoose.set("useCreateIndex", true);
 
+static _id: number = 0;
+public id: number;
+
 export interface IArticle extends mongoose.Document {
+    
     title: string;
-    author: number;
+    subtitle: string;
+    body: string;
+    author: string;
   }
   
   export const ArticleSchema = new mongoose.Schema({
     title: { type: String, required: true },
-    author: { type: String, required: true }
+    subtitle: { type: String, required: true },
+    body: { type: String, required: true },
+    author: { type: String, required: true },
   });
   
   const Article = mongoose.model<IArticle>("Article", ArticleSchema);
-  export default Book;
+  export default Article;
 
 const server = app.listen(port, () => {
     // tslint:disable-next-line:no-console

@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import { Application, Request, Response } from "express";
-import * as articleController from "./controller/articleController.ts";
+import * as articleController from "./controller/articleController";
 
 dotenv.config();
 

@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import Article from "./../server";
 
 export let allArticles = (req: Request, res: Response) => {
   res.send("Returns all articles");
@@ -9,14 +10,39 @@ export let getArticle = (req: Request, res: Response) => {
 };
 
 export let deleteArticle = (req: Request, res: Response) => {
-  res.send("Returns one article");
+    let article = Article.deleteOne({ _id: req.params.id }, (err: any) => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.send("Successfully Deleted Article");
+        }
+      });
 };
 
 export let updateArticle = (req: Request, res: Response) => {
-  res.send("Returns one article");
+  console.log(req.body);
+  let article = Article.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    (err: any, book: any) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send("Successfully updated article!");
+      }
+    }
+  );
 };
 
 export let addArticle = (req: Request, res: Response) => {
-  res.send("Returns one article");
+    var article = new Article(req.body);
+
+    article.save((err: any) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(article);
+      }
+    });
 };
 
