@@ -1,11 +1,25 @@
 import { Request, Response } from "express";
-import Article from "./../server";
+import Article from "./../server"
 
 export let allArticles = (req: Request, res: Response) => {
+  let articles = Article.find((err: any, articles: any) => {
+    if (err) {
+      res.send("Error!");
+    } else {
+      res.send(articles);
+    }
+  });
   res.send("Returns all articles");
 };
 
 export let getArticle = (req: Request, res: Response) => {
+  let article = Article.findById(req.params.id, (err: any, article: any) =>{
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(article);
+    }
+  })
   res.send("Returns one article");
 };
 
