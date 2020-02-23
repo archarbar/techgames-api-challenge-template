@@ -9,7 +9,7 @@ export let allArticles = (req: Request, res: Response) => {
       res.send(articles);
     }
   });
-  res.send("Returns all articles");
+  res.send(articles);
 };
 
 export let getArticle = (req: Request, res: Response) => {
@@ -20,7 +20,7 @@ export let getArticle = (req: Request, res: Response) => {
       res.send(article);
     }
   })
-  res.send("Returns one article");
+  res.send(article);
 };
 
 export let deleteArticle = (req: Request, res: Response) => {
