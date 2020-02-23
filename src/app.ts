@@ -34,7 +34,7 @@ app.get("/status", (req: Request, res: Response) => {
 } );
 
 app.get("/articles", articleController.allArticles);
-app.get("/articles/:id", articleController.getArticle);
+app.get("/articles/{id}", articleController.getArticle);
 app.post("/articles", articleController.addArticle);
 app.put("/articles/:id", articleController.updateArticle);
 app.delete("/articles/:id", articleController.deleteArticle);

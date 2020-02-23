@@ -4,12 +4,11 @@ import Article from "./../server"
 export let allArticles = (req: Request, res: Response) => {
   let articles = Article.find((err: any, articles: any) => {
     if (err) {
-      res.send("Error!");
+      res.send(err);
     } else {
       res.send(articles);
     }
   });
-  res.send(articles);
 };
 
 export let getArticle = (req: Request, res: Response) => {
@@ -20,7 +19,6 @@ export let getArticle = (req: Request, res: Response) => {
       res.send(article);
     }
   })
-  res.send(article);
 };
 
 export let deleteArticle = (req: Request, res: Response) => {
@@ -28,7 +26,7 @@ export let deleteArticle = (req: Request, res: Response) => {
         if (err) {
           res.send(err);
         } else {
-          res.send("Successfully Deleted Article");
+          res.send(article);
         }
       });
 };
@@ -42,7 +40,7 @@ export let updateArticle = (req: Request, res: Response) => {
       if (err) {
         res.send(err);
       } else {
-        res.send("Successfully updated article!");
+        res.send(article);
       }
     }
   );
