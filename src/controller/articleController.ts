@@ -1,21 +1,22 @@
 import { Request, Response } from "express";
 
-export let allBooks = (req: Request, res: Response) => {
-  res.send("Returns all Books");
+export let allArticles = (req: Request, res: Response) => {
+  res.send("Returns all articles");
 };
 
-export let getBook = (req: Request, res: Response) => {
-  res.send("Returns one book");
+export let getArticle = (req: Request, res: Response) => {
+  res.send("Returns one article");
 };
 
-export let deleteBook = (req: Request, res: Response) => {
-  res.send("Returns one book");
+export let deleteArticle = (req: Request, res: Response) => {
+  res.send("Returns one article");
 };
 
-export let updateBook = (req: Request, res: Response) => {
-  res.send("Returns one book");
+export let updateArticle = (req: Request, res: Response) => {
+  res.send("Returns one article");
 };
 
-export let addBook = (req: Request, res: Response) => {
-  res.send("Returns one book");
+export let addArticle = (req: Request, res: Response) => {
+  res.send("Returns one article");
 };
+

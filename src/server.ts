@@ -14,6 +14,19 @@ mongoose.connect(dbUrl, {
 });
 mongoose.set("useCreateIndex", true);
 
+export interface IArticle extends mongoose.Document {
+    title: string;
+    author: number;
+  }
+  
+  export const ArticleSchema = new mongoose.Schema({
+    title: { type: String, required: true },
+    author: { type: String, required: true }
+  });
+  
+  const Article = mongoose.model<IArticle>("Article", ArticleSchema);
+  export default Book;
+
 const server = app.listen(port, () => {
     // tslint:disable-next-line:no-console
     console.log(`Server started at http://localhost:${port}`);
