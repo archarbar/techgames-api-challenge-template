@@ -14,11 +14,7 @@ mongoose.connect(dbUrl, {
 });
 mongoose.set("useCreateIndex", true);
 
-// static _id: number = 0;
-// public id: number;
-
 export interface IArticle extends mongoose.Document {
-    
     title: string;
     subtitle: string;
     body: string;
