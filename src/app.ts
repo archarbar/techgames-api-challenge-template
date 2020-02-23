@@ -18,11 +18,19 @@ if (port == "") {
     process.exit(1);
 }
 
-app.use((req: Request, res: Response) => {
+// app.use((req: Request, res: Response) => {
+//     res.status(500).send({
+//         status: 500,
+//         message: "Not Implemented"
+//     });
+// });
+
+// define a route handler for the default home page
+app.get("/status", (req: Request, res: Response) => {
     res.status(500).send({
-        status: 500,
-        message: "Not Implemented"
-    });
-});
+        "status": "Up"
+    } );
+} );
+
 
 export { app, port }
