@@ -5,7 +5,7 @@ let dbUrl = "";
 
 (process.env.DB_URL)
     ? dbUrl = process.env.DB_URL
-    : dbUrl = "mongodb://mongo:27017/techgames-template";
+    : dbUrl = "mongodb://archarbar:archarbar@techgames-shard-00-00-jy508.azure.mongodb.net:27017,techgames-shard-00-01-jy508.azure.mongodb.net:27017,techgames-shard-00-02-jy508.azure.mongodb.net:27017/test?ssl=true&replicaSet=techgames-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
